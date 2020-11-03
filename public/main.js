@@ -18,8 +18,7 @@ var todoStorage = {
 
 // ★STEP1
 new Vue({
-  el: '#app',
-
+  el: '#app', // el:コンポーネントのインスタンスをどのHTML要素に結び付けるかを定義
   data: {
     // ★STEP5 localStorage から 取得した ToDo のリスト
     todos: [],
