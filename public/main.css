@@ -25,6 +25,9 @@ th {
 thead th.id {
   width: 50px;
 }
+thead th.user {
+  width: 70px;
+}
 thead th.state {
   width: 100px;
 }

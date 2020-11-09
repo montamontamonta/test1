@@ -25,6 +25,7 @@
       <thead v-pre>  <!--thead ヘッダー-->
         <tr>
           <th class="id">ID</th>
+          <th class="user">USER</th>
           <th class="comment">コメント</th>
           <th class="state">状態</th>
           <th class="button">-</th>
@@ -37,6 +38,7 @@
           v-bind:key="item.id"
           v-bind:class="{done:item.state}">
           <th>{{ item.id }}</th>
+          <td>{{ item.user }}</td>
           <td>{{ item.comment }}</td>
           <td class="state">
             <!-- ★STEP10 状態変更ボタン -->
@@ -58,6 +60,8 @@
     <!-- ★STEP6 -->
     <h2>新しい作業の追加</h2>
     <form class="add-form" v-on:submit.prevent="doAdd">
+      <!-- コメント入力フォーム -->
+      user <input type="text" ref="user">
       <!-- コメント入力フォーム -->
       コメント <input type="text" ref="comment">
       <!-- 追加ボタンのモック -->

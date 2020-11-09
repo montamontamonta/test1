@@ -74,6 +74,7 @@ new Vue({
 
     // ★STEP7 ToDo 追加の処理
     doAdd: function(event, value) {
+      var user = this.$refs.user
       // ref で名前を付けておいた要素を参照
       var comment = this.$refs.comment
       // 入力がなければ何もしないで return
@@ -85,10 +86,12 @@ new Vue({
       // 作業状態「state」はデフォルト「作業中=0」で作成
       this.todos.push({
         id: todoStorage.uid++,
+        user: user.value,
         comment: comment.value,
         state: 0
       })
       // フォーム要素を空にする
+      user.value = ''
       comment.value = ''
     },
 
