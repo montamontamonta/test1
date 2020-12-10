@@ -8,7 +8,7 @@
 <body>
 
   <div id="app">
-    <h1>チュートリアルToDoリスト</h1>
+    <h1>松永</h1>
 
     <!-- ★STEP11 -->
     <label v-for="label in options" >
@@ -16,13 +16,11 @@
         v-model="current"
         v-bind:value="label.value">{{ label.label }}
     </label>
-    
       
     <!-- ★STEP12 -->
     （{{ computedTodos.length }} 件を表示）
 
     <!-- ★STEP4 リスト用テーブル -->
-    <p>松永</p>
     <table>
       <thead v-pre>
         <tr>
@@ -67,19 +65,27 @@
     </form>
   </div>
 
-  <div id="app1">  
+  <div id="app1">
+    <h1>山下</h1>
+
+    <!-- ★STEP11 -->
+    <label v-for="label in options" >
+      <input type="radio"
+        v-model="current"
+        v-bind:value="label.value">{{ label.label }}
+    </label>
+      
     <!-- ★STEP12 -->
     （{{ computedTodos.length }} 件を表示）
 
     <!-- ★STEP4 リスト用テーブル -->
-    <p>松永</p>
     <table>
       <thead v-pre>
         <tr>
-          <th class="id1">ID</th>
-          <th class="comment1">コメント</th>
-          <th class="state1">状態</th>
-          <th class="button1">-</th>
+          <th class="id">ID</th>
+          <th class="comment">コメント</th>
+          <th class="state">状態</th>
+          <th class="button">-</th>
         </tr>
       </thead>
       <tbody>
@@ -116,7 +122,123 @@
       <button type="submit">追加</button>
     </form>
   </div>
-  
+
+  <div id="app2">
+    <h1>中西</h1>
+
+    <!-- ★STEP11 -->
+    <label v-for="label in options" >
+      <input type="radio"
+        v-model="current"
+        v-bind:value="label.value">{{ label.label }}
+    </label>
+      
+    <!-- ★STEP12 -->
+    （{{ computedTodos.length }} 件を表示）
+
+    <!-- ★STEP4 リスト用テーブル -->
+    <table>
+      <thead v-pre>
+        <tr>
+          <th class="id">ID</th>
+          <th class="comment">コメント</th>
+          <th class="state">状態</th>
+          <th class="button">-</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- ★STEP5 ToDo の要素をループ -->
+        <tr
+          v-for="item in computedTodos"
+          v-bind:key="item.id"
+          v-bind:class="{done:item.state}">
+          <th>{{ item.id }}</th>
+          <td>{{ item.comment }}</td>
+          <td class="state">
+            <!-- ★STEP10 状態変更ボタン -->
+            <button v-on:click="doChangeState(item)">
+              {{ labels[item.state] }}
+            </button>
+          </td>
+          <td class="button">
+            <!-- ★STEP10 削除ボタン -->
+            <button v-on:click.ctrl="doRemove(item)">
+              削除
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <p>※削除ボタンはコントロールキーを押しながらクリックして下さい</p>
+
+    <!-- ★STEP6 -->
+    <h2>新しい作業の追加</h2>
+    <form class="add-form" v-on:submit.prevent="doAdd">
+      <!-- コメント入力フォーム -->
+      コメント <input type="text" ref="comment">
+      <!-- 追加ボタンのモック -->
+      <button type="submit">追加</button>
+    </form>
+  </div>
+
+  <div id="app3">
+    <h1>門田</h1>
+
+    <!-- ★STEP11 -->
+    <label v-for="label in options" >
+      <input type="radio"
+        v-model="current"
+        v-bind:value="label.value">{{ label.label }}
+    </label>
+      
+    <!-- ★STEP12 -->
+    （{{ computedTodos.length }} 件を表示）
+
+    <!-- ★STEP4 リスト用テーブル -->
+    <table>
+      <thead v-pre>
+        <tr>
+          <th class="id">ID</th>
+          <th class="comment">コメント</th>
+          <th class="state">状態</th>
+          <th class="button">-</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- ★STEP5 ToDo の要素をループ -->
+        <tr
+          v-for="item in computedTodos"
+          v-bind:key="item.id"
+          v-bind:class="{done:item.state}">
+          <th>{{ item.id }}</th>
+          <td>{{ item.comment }}</td>
+          <td class="state">
+            <!-- ★STEP10 状態変更ボタン -->
+            <button v-on:click="doChangeState(item)">
+              {{ labels[item.state] }}
+            </button>
+          </td>
+          <td class="button">
+            <!-- ★STEP10 削除ボタン -->
+            <button v-on:click.ctrl="doRemove(item)">
+              削除
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <p>※削除ボタンはコントロールキーを押しながらクリックして下さい</p>
+
+    <!-- ★STEP6 -->
+    <h2>新しい作業の追加</h2>
+    <form class="add-form" v-on:submit.prevent="doAdd">
+      <!-- コメント入力フォーム -->
+      コメント <input type="text" ref="comment">
+      <!-- 追加ボタンのモック -->
+      <button type="submit">追加</button>
+    </form>
+  </div>
+
   <script src="https://cdn.jsdelivr.net/npm/vue"></script>
   <script src="./main.js"></script>
 </body>

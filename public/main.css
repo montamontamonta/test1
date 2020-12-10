@@ -9,6 +9,18 @@
   max-width: 640px;
   margin: 0 auto;
 }
+#app1 {
+  max-width: 640px;
+  margin: 0 auto;
+}
+#app2 {
+  max-width: 640px;
+  margin: 0 auto;
+}
+#app3 {
+  max-width: 640px;
+  margin: 0 auto;
+}
 table {
   width: 100%;
   border-collapse: collapse;
@@ -24,9 +36,6 @@ th {
 }
 thead th.id {
   width: 50px;
-}
-thead th.user {
-  width: 70px;
 }
 thead th.state {
   width: 100px;
